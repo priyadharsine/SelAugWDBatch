@@ -1,4 +1,4 @@
-package day3;
+package day4;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LearnFrame {
+public class LearnFrameWithSnapshot {
 
 	public static void main(String[] args) throws InterruptedException, IOException {				
 
@@ -35,6 +35,19 @@ public class LearnFrame {
 		}
 		
 		driver.findElementByLinkText("Sortable").click();
+		
+		File src = driver.getScreenshotAs(OutputType.FILE);
+		
+		File desc = new File("./snaps/img1.jpg");
+		
+		FileUtils.copyFile(src, desc);
 
 	}
+
+
+
+
+
+
+
 }
