@@ -1,0 +1,47 @@
+package wrappers;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+
+public class LeafTapsWrapper extends GenericWrappers {
+
+	@BeforeSuite
+	public void beforeSuite() {
+		System.out.println("beforeSuite");
+	}
+	@BeforeTest
+	public void beforeTest() {
+		System.out.println("beforeTest");
+	}
+	@BeforeClass
+	public void beforeClass() {
+		System.out.println("beforeClass");
+	}
+	@BeforeMethod
+	public void login() throws Exception {
+		invokeApp("chrome", "http://leaftaps.com/opentaps");
+		enterById("username", "DemoSalesManager");
+		enterById("password", "crmsfa");
+		clickByClassName("decorativeSubmit");
+		clickByLink("CRM/SFA");
+
+	}
+	@AfterMethod
+	public void closeBrowesr() {
+		quitBrowser();
+
+	}
+	@AfterTest
+	public void afterTest() {
+		System.out.println("afterTest");
+	}
+	@AfterSuite
+	public void afterSuite() {
+		System.out.println("afterSuite");
+	}
+}

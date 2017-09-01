@@ -24,6 +24,8 @@ public class Login {
 		
 		//Enter the Password
 		driver.findElementById("password").sendKeys(pwd);
+		
+		Thread.sleep(3000);
 
 		//Click on Login Button
 		driver.findElementByClassName("decorativeSubmit").click();
