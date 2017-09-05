@@ -7,13 +7,13 @@ import wrappers.LeafTapsWrapper;
 
 public class EditLead extends LeafTapsWrapper {	
 
-	@Test
+	@Test(groups={"regression"})
 	public void editLead() throws Exception{
 		clickByLink("Leads");
 		clickByLink("Find Leads");
 		enterByXpath("(//input[@name='firstName'])[3]", "Gopinath");
 		clickByXpath("//button[contains(text(),'Find Leads')]");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		clickByXpath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[1]/a");
 		verifyTitle("View Lead | opentaps CRM");
 		clickByXpath("//a[contains(text(),'Edit')]");

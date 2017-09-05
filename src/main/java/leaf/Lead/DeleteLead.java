@@ -6,7 +6,8 @@ import wrappers.LeafTapsWrapper;
 
 public class DeleteLead extends LeafTapsWrapper{
 
-	@Test
+	//@Test(groups={"sanity"},dependsOnGroups={"smoke"})
+	@Test(dependsOnMethods= {"leaf.Lead.CreateLead.createLead"})
 	public void deleteLead() throws Exception {
 		
 		clickByLink("Leads");
@@ -14,7 +15,7 @@ public class DeleteLead extends LeafTapsWrapper{
 		clickByXpath("//span[contains(text(),'Phone')]");
 		enterByName("phoneNumber", "9597704568");
 		clickByXpath("//button[contains(text(),'Find Leads')]");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		String sText = getTextByXpath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[1]/a");
 		clickByXpath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[1]/a");
 		clickByLink("Delete");

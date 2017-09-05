@@ -16,6 +16,11 @@ public class LearnAnnatation {
 	public void beforeSuite() {
 		System.out.println("BeforeSuite");
 	}
+	
+	@BeforeSuite
+	public void beforeSuite1() {
+		System.out.println("BeforeSuite1");
+	}
 
 	@BeforeTest
 	public void beforeTest() {
