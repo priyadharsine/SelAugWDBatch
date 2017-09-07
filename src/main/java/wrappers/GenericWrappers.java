@@ -41,13 +41,14 @@ public class GenericWrappers{
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(Url);
-
-			System.out.println("The browser:" + browser + " launched successfully");
+			
+			System.out.println("The browser: "+browser+" launched successfully");
+			
 			bReturn = true;
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("The browser:" + browser + " could not be launched");
+			System.out.println("The browser: "+browser+" could not be launched");
 		}
 		finally{
 			takeSnap();

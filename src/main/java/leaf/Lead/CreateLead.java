@@ -2,7 +2,6 @@ package leaf.Lead;
 
 
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import wrappers.LeafTapsWrapper;
@@ -24,7 +23,7 @@ public class CreateLead extends LeafTapsWrapper{
 	}
 	
 	
-	@DataProvider(name="fetchData")
+	/*@DataProvider(name="fetchData")
 	public Object[][] getData() {
 		
 		Object[][] data = new Object[2][3];
@@ -35,7 +34,7 @@ public class CreateLead extends LeafTapsWrapper{
 		data[1][1] = "sarath";
 		data[1][2] = "M";
 		return data;		
-	}
+	}*/
 	
 	
 	
